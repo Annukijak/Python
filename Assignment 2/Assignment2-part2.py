@@ -11,7 +11,7 @@ def check_bucket_policy(bucket_name):
         response = s3.get_bucket_policy(Bucket=bucket_name)
         pprint(response.get("Policy"))
     except Exception as ex:
-        return apply_policy(bucket_name)
+        return set_policy(bucket_name)
 
 
 def generate_public_read_policy(bucket_name):
