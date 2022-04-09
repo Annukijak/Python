@@ -7,7 +7,7 @@ s3 = boto3.client("s3")
 def generate_bucket(bucket_name):
     try:
         response = s3.head_bucket(Bucket=bucket_name)
-    except SomethingElse as ex:
+    except Exceptions as ex:
         print(ex)
         return False
     status_code = response["ResponseMetadata"]["HTTPStatusCode"]
